@@ -354,7 +354,6 @@ button:hover {
     transform: translateY(0);
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     transition: all 0.3s ease;
-    animation: heartbeat 2s ease-in-out infinite;
     -webkit-tap-highlight-color: transparent;
     will-change: transform;
 }
@@ -373,7 +372,6 @@ button:hover {
 
 .map-button i {
     font-size: 1.2em;
-    animation: heartbeat 5s ease-in-out infinite;
 }
 
 .gifts-container {
@@ -441,7 +439,6 @@ button:hover {
     animation: slideDown 1s ease-out 1.2s;
     transform: translateY(0);
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    animation: heartbeat 2s ease-in-out infinite;
     -webkit-tap-highlight-color: transparent;
     will-change: transform;
 }
@@ -460,7 +457,6 @@ button:hover {
 
 .gift-button i {
     font-size: 1.2em;
-    animation: heartbeat 5s ease-in-out infinite;
 }
 
 #rsvp {
@@ -504,7 +500,6 @@ button:hover {
     min-width: fit-content; /* Ensure button doesn't get too small */
     transform: translateY(0);
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    animation: heartbeat 2s ease-in-out infinite;
     -webkit-tap-highlight-color: transparent;
     will-change: transform;
 }
@@ -523,7 +518,6 @@ button:hover {
 
 .whatsapp-button i {
     font-size: 1.2em;
-    animation: heartbeat 5s ease-in-out infinite;
 }
 
 footer {
@@ -610,24 +604,6 @@ footer p {
     }
 }
 
-@keyframes heartbeat {
-    0% {
-        transform: scale(1);
-    }
-    14% {
-        transform: scale(1.1);
-    }
-    28% {
-        transform: scale(1);
-    }
-    42% {
-        transform: scale(1.1);
-    }
-    70% {
-        transform: scale(1);
-    }
-}
-
 .map-button, .gift-button, .whatsapp-button {
     display: flex;
     align-items: center;
@@ -638,24 +614,60 @@ footer p {
     text-decoration: none;
     padding: 0.8em 1.5em;
     border-radius: 25px;
-    font-size: 1em;
+    font-size: 0.9em;
     margin-top: 1em;
     width: fit-content;
     transform: translateY(0);
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    -webkit-tap-highlight-color: transparent;
-    animation: heartbeat 2s ease-in-out infinite;
+    transition: all 0.3s ease;
     will-change: transform;
 }
 
-/* Remove conflicting transitions and animations */
-.map-button i, .gift-button i, .whatsapp-button i {
-    font-size: 1.2em;
+#header {
+    animation: fadeIn 1s ease-out;
+}
+
+#intro {
+    animation: fadeIn 1s ease-out 0.2s both;
+}
+
+#invitation {
+    animation: fadeIn 1s ease-out 0.4s both;
+}
+
+#event-details {
+    animation: fadeIn 1s ease-out 0.6s both;
+}
+
+#location {
+    animation: fadeIn 1s ease-out 0.8s both;
+}
+
+#gifts {
+    animation: fadeIn 1s ease-out 1s both;
+}
+
+#rsvp {
+    animation: fadeIn 1s ease-out 1.2s both;
+}
+
+footer {
+    animation: fadeIn 1s ease-out 1.4s both;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @media (hover: hover) {
     .map-button:hover, .gift-button:hover, .whatsapp-button:hover {
-        animation: none;
         background-color: #2c5439;
         transform: translateY(-3px);
         box-shadow: 0 4px 15px rgba(0,0,0,0.3);
@@ -664,7 +676,6 @@ footer p {
 
 @media (hover: none) {
     .map-button:active, .gift-button:active, .whatsapp-button:active {
-        animation: none;
         background-color: #2c5439;
         transform: scale(0.95);
         box-shadow: 0 2px 8px rgba(0,0,0,0.2);
