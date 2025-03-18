@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baby Shower Celebration</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Baby Shower!</h1>
+        <p>Join us in celebrating the upcoming arrival of our little one!</p>
+    </header>
+    
+    <main>
+        <section id="details">
+            <h2>Event Details</h2>
+            <p><strong>Date:</strong> Saturday, March 25, 2023</p>
+            <p><strong>Time:</strong> 2:00 PM - 5:00 PM</p>
+            <p><strong>Location:</strong> 123 Baby Lane, Baby Town</p>
+        </section>
+        
+        <section id="rsvp">
+            <h2>RSVP</h2>
+            <p>Please let us know if you can make it!</p>
+            <form id="rsvp-form">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="attending">Will you attend?</label>
+                <select id="attending" name="attending" required>
+                    <option value="">Select...</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+                
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+        
+        <section id="gifts">
+            <h2>Gift Registry</h2>
+            <p>Your presence is the best gift, but if you wish to bring something, here are some ideas:</p>
+            <ul>
+                <li>Diapers</li>
+                <li>Baby Clothes</li>
+                <li>Toys</li>
+                <li>Books</li>
+            </ul>
+        </section>
+    </main>
+    
+    <footer>
+        <p>Thank you for being a part of this special day!</p>
+    </footer>
+    
+    <script src="js/scripts.js"></script>
+</body>
+</html>
