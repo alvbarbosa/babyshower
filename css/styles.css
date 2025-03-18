@@ -349,14 +349,27 @@ button:hover {
     margin-top: 1em;
     width: fit-content;
     animation: slideDown 1s ease-out 0.3s; /* Added 0.3s delay for sequence effect */
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    animation: heartbeat 5s ease-in-out infinite;
 }
 
 .map-button:hover {
+    animation: none;
     background-color: #2c5439;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.map-button:active {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
 
 .map-button i {
     font-size: 1.2em;
+    animation: heartbeat 5s ease-in-out infinite;
 }
 
 .gifts-container {
@@ -422,14 +435,27 @@ button:hover {
     transition: background-color 0.3s ease;
     margin-top: 1em;
     animation: slideDown 1s ease-out 1.2s;
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    animation: heartbeat 5s ease-in-out infinite;
 }
 
 .gift-button:hover {
+    animation: none;
     background-color: #2c5439;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.gift-button:active {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
 
 .gift-button i {
     font-size: 1.2em;
+    animation: heartbeat 5s ease-in-out infinite;
 }
 
 #rsvp {
@@ -471,14 +497,27 @@ button:hover {
     transition: background-color 0.3s ease;
     animation: slideDown 1s ease-out 0.3s;
     min-width: fit-content; /* Ensure button doesn't get too small */
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    animation: heartbeat 5s ease-in-out infinite;
 }
 
 .whatsapp-button:hover {
+    animation: none;
     background-color: #2c5439;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.whatsapp-button:active {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
 
 .whatsapp-button i {
     font-size: 1.2em;
+    animation: heartbeat 5s ease-in-out infinite;
 }
 
 footer {
@@ -562,5 +601,23 @@ footer p {
 
     footer p {
         font-size: 1.5em;
+    }
+}
+
+@keyframes heartbeat {
+    0% {
+        transform: scale(1);
+    }
+    14% {
+        transform: scale(1.1);
+    }
+    28% {
+        transform: scale(1);
+    }
+    42% {
+        transform: scale(1.1);
+    }
+    70% {
+        transform: scale(1);
     }
 }
