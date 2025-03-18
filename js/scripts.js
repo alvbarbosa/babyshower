@@ -21,9 +21,25 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }, 1000);
 
-    // Play background music on user interaction
-    document.body.addEventListener('click', function() {
-        var audio = document.getElementById('background-music');
-        audio.play();
-    });
+    // Play background music on any user interaction
+    let hasPlayedMusic = false;
+    const audio = document.getElementById('background-music');
+
+    function playMusic() {
+        if (!hasPlayedMusic) {
+            audio.play()
+                .then(() => {
+                    hasPlayedMusic = true;
+                })
+                .catch(function(error) {
+                    console.log("Audio playback failed:", error);
+                });
+        }
+    }
+
+    // Listen for various user interactions
+    document.addEventListener('click', playMusic, { once: true });
+    document.addEventListener('touchstart', playMusic, { once: true });
+    document.addEventListener('scroll', playMusic, { once: true });
+    document.addEventListener('keypress', playMusic, { once: true });
 });
