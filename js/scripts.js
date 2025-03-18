@@ -42,4 +42,20 @@ document.addEventListener('DOMContentLoaded', function() {
     document.addEventListener('touchstart', playMusic, { once: true });
     document.addEventListener('scroll', playMusic, { once: true });
     document.addEventListener('keypress', playMusic, { once: true });
+
+    // Intersection Observer for animations
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('fade-in');
+                observer.unobserve(entry.target); // Stop observing after animation
+            }
+        });
+    }, {
+        threshold: 0.1 // Trigger when at least 10% of the element is visible
+    });
+
+    // Observe all elements that should animate
+    const elements = document.querySelectorAll('.intro-image, .location-image, .gifts-images, .gift-image');
+    elements.forEach(element => observer.observe(element));
 });
