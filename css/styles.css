@@ -37,10 +37,15 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #E9F2E7;
     color: #333;
     margin: 0;
     padding: 0;
+    background-image: url('../images/fondo.avif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
 }
 
 #header h1 {
@@ -52,11 +57,14 @@ body {
 }
 
 main {
-    padding: 0;
+    background-color: rgba(233, 242, 231, 0.9); /* #E9F2E7 with 0.9 opacity */
+    min-height: 100vh;
+    position: relative;
+    z-index: 1;
 }
 
 section {
-    margin-bottom: 2em;
+    margin-bottom: 1em;
 }
 
 h1, h2 {
@@ -84,17 +92,22 @@ button:hover {
 .intro-content {
     display: flex;
     align-items: center;
+    justify-content: center;
     flex-wrap: nowrap;
+    gap: 0; /* Remove gap between elements */
+    max-width: 800px; /* Limit maximum width */
+    margin: 0 auto; /* Center the container */
+    padding: 0 1em;
 }
 
 .intro-image {
-    flex: 1 1 50%;
-    max-width: 50%;
+    flex: 0 1 40%; /* Reduce the image size */
+    max-width: 40%;
     animation: slideDown 1s ease-out;
 }
 
 .intro-text {
-    flex: 1 1 50%;
+    flex: 0 1 40%; /* Match the image size */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -123,6 +136,7 @@ button:hover {
 #invitation p {
     font-family: 'Didot-W01-Italic', serif;
     font-size: 1.5em;
+    padding: 0 0.5em;
 }
 
 @keyframes slideDown {
@@ -149,6 +163,21 @@ button:hover {
     .intro-text {
         align-items: center;
         text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .intro-content {
+        padding: 0 0.5em;
+    }
+
+    .intro-image, .intro-text {
+        flex: 0 1 45%; /* Slightly larger on mobile */
+        max-width: 45%;
+    }
+
+    .intro-text {
+        font-size: 2em;
     }
 }
 
@@ -248,18 +277,22 @@ button:hover {
     flex-direction: column;
     align-items: center;
     padding: 0;
+    max-width: 800px; /* Limit maximum width */
+    margin: 0 auto; /* Center the container */
 }
 
 .location-container {
     display: flex;
     align-items: center;
+    justify-content: center;
     width: 100%;
+    gap: 0; /* Remove gap between elements */
     animation: slideDown 1s ease-out;
 }
 
 .location-image {
-    flex: 1;
-    max-width: 50%;
+    flex: 0 1 40%; /* Reduce the image size */
+    max-width: 40%;
 }
 
 .location-image img {
@@ -269,12 +302,11 @@ button:hover {
 }
 
 .location-info {
-    flex: 1;
+    flex: 0 1 40%; /* Match the image size */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 1em;
     text-align: center;
 }
 
@@ -405,7 +437,7 @@ button:hover {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 2em 1em;
+    padding: 1em 0.5em;
     animation: slideDown 1s ease-out;
 }
 
@@ -463,6 +495,21 @@ footer p {
 }
 
 @media (max-width: 768px) {
+    .location-container {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        gap: 0;
+    }
+
+    .location-image {
+        flex: 0 1 40%;
+        max-width: 40%;
+    }
+
+    .location-info {
+        flex: 0 1 40%;
+    }
+
     .location-container {
         flex-direction: row; /* Keep horizontal layout */
         flex-wrap: nowrap; /* Prevent wrapping */
