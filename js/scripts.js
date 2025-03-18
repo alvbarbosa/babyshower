@@ -58,4 +58,14 @@ document.addEventListener('DOMContentLoaded', function() {
     // Observe all elements that should animate
     const elements = document.querySelectorAll('.intro-image, .location-image, .gifts-images, .gift-image');
     elements.forEach(element => observer.observe(element));
+
+    // Handle guest name from URL query parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    const guestName = urlParams.get('invitado');
+    
+    if (guestName) {
+        const decodedName = decodeURIComponent(guestName);
+        const guestNameElement = document.querySelector('.guest-name');
+        guestNameElement.textContent = `¡Hola ${decodedName}!`;
+    }
 });

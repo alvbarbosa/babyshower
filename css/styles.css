@@ -172,8 +172,8 @@ button:hover {
     }
 
     .intro-image, .intro-text {
-        flex: 0 1 45%; /* Slightly larger on mobile */
-        max-width: 45%;
+        flex: 0 1 65%; /* Slightly larger on mobile */
+        max-width: 65%;
     }
 
     .intro-text {
@@ -709,4 +709,13 @@ footer {
 .fade-in {
     opacity: 1;
     transform: translateY(0);
+}
+
+.guest-name {
+    font-family: 'Niconne', cursive;
+    font-size: 2.5em;
+    color: #3E7652;
+    margin: 0.5em 0;
+    text-align: center;
+    animation: fadeIn 1s ease-out 0.3s both;
 }
